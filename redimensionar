@@ -1,0 +1,6 @@
+vgdisplay // verifica espaço, ver onde tem escrito FREE
+lvextend -L +[tamanho] /dev/mapper/ubuntu--vg-ubuntu--lv // Substitua [tamanho] pelo valor que você deseja adicionar, como 10G para adicionar 10GB.
+lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv // 100% do espaço livre
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv // EXT4
+xfs_growfs /ponto_de_montagem // XFS
+df -h // Comfirmar
